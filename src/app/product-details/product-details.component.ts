@@ -20,7 +20,7 @@ export class ProductDetailsComponent implements OnInit {
   ) { }
 
   // takes in the current product, adds to the array using the service method
-  addtoCart(product: Product) {
+  addToCart(product: Product) {
     this.cartService.addToCart(product);
     window.alert('Your product has been added to the cart');
   }
