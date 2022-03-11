@@ -4,6 +4,7 @@
 <div *ngFor="let product of products">
   <h3>
     <!-- makes the list item a link [] property binding with a route using the product id number -->
+    <!-- Ask lewis about the a-tag property -->
     <a
       [routerLink]="['/products', product.id]"
       [title]="product.name + ' details'">
