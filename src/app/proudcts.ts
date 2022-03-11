@@ -1,3 +1,5 @@
+// array of objects product, just like you would get from an Api call
+
 export interface Product {
   id: number;
   name: string;

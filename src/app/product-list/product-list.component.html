@@ -3,8 +3,10 @@
 <!-- looping through the products model  -->
 <div *ngFor="let product of products">
   <h3>
-    <!-- makes the list item a link [] property binding -->
-    <a [title]="product.name + ' details'">
+    <!-- makes the list item a link [] property binding with a route using the product id number -->
+    <a
+      [routerLink]="['/products', product.id]"
+      [title]="product.name + ' details'">
       {{ product.name }}
     </a>
   </h3>
