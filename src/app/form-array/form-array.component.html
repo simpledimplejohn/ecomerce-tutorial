@@ -1,0 +1,72 @@
+
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+
+<form [formGroup]="skillsForm" (ngSubmit)="onSubmit()">
+
+  <p>
+    <label for="name">Name </label>
+    <input type="text" id="name" name="name" formControlName="name">
+  </p>
+
+
+  Skills:
+  <div formArrayName="skills">
+    <div *ngFor="let skill of skills.controls; let i=index">
+      <div [formGroupName]="i">
+        {{i}}
+        skill name :
+        <input type="text" formControlName="skill">
+        exp:
+        <input type="text" formControlName="exp">
+
+        <button (click)="removeSkill(i)">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    <button type="submit">Submit</button>
+  </p>
+
+</form>
+
+
+<p>
+  <button type="button" (click)="addSkills()">Add</button>
+</p>
+
+{{this.skillsForm.value | json}}
